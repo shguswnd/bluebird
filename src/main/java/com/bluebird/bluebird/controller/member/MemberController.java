@@ -54,6 +54,6 @@ public class MemberController {
         log.info("info log={}", member.toString());
 
         memberService.createMember(member);
-        return "redirect:/member";
+        return "redirect:/admin/index";
     }
 }
