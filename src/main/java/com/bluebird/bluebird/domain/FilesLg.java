@@ -16,8 +16,8 @@ public class FilesLg {
     @Id
     private String fileNum;
     @ManyToOne
-    @JoinColumn  (name = "id")
-    private String id;
+    @JoinColumn  (name = "MEMBER_ID")
+    private Member fileId;
     private String fileName;
     private Integer fileSize;
     @Temporal(TemporalType.TIMESTAMP)

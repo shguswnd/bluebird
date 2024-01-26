@@ -1,6 +1,6 @@
 package com.bluebird.bluebird.controller.common;
 
-import com.bluebird.bluebird.service.common.FileUtils;
+import com.bluebird.bluebird.utils.FileUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

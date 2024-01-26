@@ -16,6 +16,7 @@ public class Member {
 
     //    @GeneratedValue
     @Id //pk 필드
+    @Column(name = "MEMBER_ID")
     private String id;
     private String pwd;
     private String name;

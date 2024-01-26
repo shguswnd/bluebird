@@ -10,21 +10,18 @@
     <div class="py-5 text-center">
         <h2>파일업로드</h2>
     </div>
-    <form id="files"
-          th:action="|location.href='@{/files}'|" method="post" enctype="multipart/form-data">
+    <form id="files" th:action="@{/admin/fileUpload}" method="post" enctype="multipart/form-data">
         <div class="col">
             <label>파일업로드</label>
             <input name="file" id="file" type="file" >
         </div>
         <div class="row">
             <div class="col">
-                <button class="btn btn-primary float-end"
-                        th:onclick="|location.href='@{/member/signup}'|"
-                        type="submit">파일업로드 제출</button>
+                <button class="btn btn-primary float-end" type="submit">파일업로드 제출</button>
             </div>
-
         </div>
     </form>
+
 </div>
 </body>
 </html>

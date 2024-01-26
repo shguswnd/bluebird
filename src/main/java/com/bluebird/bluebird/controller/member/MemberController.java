@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.text.SimpleDateFormat;
 
 
-@Slf4j
+@Slf4j //로깅
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor //생성자 주입
