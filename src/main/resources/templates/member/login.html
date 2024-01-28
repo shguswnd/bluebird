@@ -6,15 +6,26 @@
           th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
+<!--전역 변수 설정-->
+<!--<th:block th:with="path=${#ctx.request.servletContext.contextPath}" th:var="path" ></th:block>-->
 <div class="container" style="max-width: 600px">
     <div class="py-5 text-center">
         <h2>로그인</h2>
     </div>
+<form id="login" th:action="@{${servletPath + '/login'}}" method="post">
+    <div>
+        <label for="id">아이디</label>
+        <input type="text" id="id" name="id" class="formcontrol" placeholder="4~20자리 / 영문, 숫자, 특수문자 '_' 사용가능">
+    </div>
+    <div>
+        <label for="pwd">비밀번호</label>
+        <input type="text" id="pwd" name="pwd" class="formcontrol" placeholder="8~16자리/영문 대소문자, 숫자, 특수문자 조합">
+    </div>
+
     <div class="row">
         <div class="col">
             <button class="btn btn-primary float-end"
-                    th:onclick="|location.href='@{/admin}'|"
-                    type="button">로그인</button>
+                    type="submit">로그인</button>
         </div>
         <div class="col">
             <button class="btn btn-primary float-end"
@@ -23,6 +34,9 @@
         </div>
 
     </div>
+
+
+</form>
 
 </div>
 </body>

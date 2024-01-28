@@ -25,9 +25,8 @@ public class adminController {
     public String admins() {return "/admin/index";}
 
     @PostMapping("/fileUpload")
-    public String fileUpload(MultipartFile file){
-        filesService.uploadFile(file);
-
+    public String fileUpload(MultipartFile[] files){
+                filesService.uploadFile(files);
         return "redirect:/index";
     }
 }

@@ -1,9 +1,11 @@
 package com.bluebird.bluebird.controller.common;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,5 +27,11 @@ private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMd
     @InitBinder
     public void initBinder(WebDataBinder binder){
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+    }
+
+
+    @ModelAttribute("servletPath")
+    String getRequestServletPath(HttpServletRequest request) {
+        return request.getServletPath();
     }
 }

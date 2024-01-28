@@ -38,22 +38,11 @@ public class MemberController {
 //        log.warn("warn log={}", member.toString());
 //        log.error(" error log={}", member.toString());
 //        memberService.createMember(member);
-        Member member = Member.builder()
-                .id(memberDto.getId())
-                .pwd(memberDto.getPwd())
-                .name(memberDto.getName())
-                .birthDay(memberDto.getBirthDay())
-                .email(memberDto.getEmail())
-                .phoneNum(memberDto.getPhoneNum())
-                .joinDate(null)
-                .status(Status.valueOf("USER"))
-                .profile("")
-                .build();
-        log.trace("trace log={}", member.toString());
-        log.debug("debug log={}", member.toString());
-        log.info("info log={}", member.toString());
+//        log.trace("trace log={}", member.toString());
+//        log.debug("debug log={}", member.toString());
+//        log.info("info log={}", member.toString());
 
-        memberService.createMember(member);
+        memberService.createMember(memberDto);
         return "redirect:/admin/index";
     }
 }

@@ -10,10 +10,10 @@
     <div class="py-5 text-center">
         <h2>파일업로드</h2>
     </div>
-    <form id="files" th:action="@{/admin/fileUpload}" method="post" enctype="multipart/form-data">
+    <form id="upload" th:action="@{/admin/fileUpload}" method="post" enctype="multipart/form-data">
         <div class="col">
             <label>파일업로드</label>
-            <input name="file" id="file" type="file" >
+            <input name="files" id="files" type="file" >
         </div>
         <div class="row">
             <div class="col">
