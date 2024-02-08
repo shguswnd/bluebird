@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<!--전역 변수 설정-->
+<!--<th:block th:with="path=${#ctx.request.servletContext.contextPath}" th:var="path" ></th:block>-->
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>메인</h2>
+    </div>
+        로그인 성공
+
+    <div class="col">
+        <button class="btn btn-primary float-end"
+                th:onclick="|location.href='@{/userMain/fileDrive}'|"
+                type="button">드라이브</button>
+
+    </div>
+
+
+
+    <form id="upload" th:action="@{${servletPath + '/fileUpload'}}" method="post" enctype="multipart/form-data">
+        <div class="col">
+            <label>파일업로드(이미지)</label>
+            <input name="files" id="files" type="file" >
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary float-end" type="submit">파일업로드 제출</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

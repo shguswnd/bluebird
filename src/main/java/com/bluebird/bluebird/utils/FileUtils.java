@@ -23,7 +23,7 @@ public class FileUtils {
     private final FileRepository fileRepository;
 
 
-    public FilesLg fileRefine(MultipartFile file){
+    public FilesLg fileRefine(MultipartFile file, String memberId){
 //        String dynamicPath = "/" + generateDynamicPath(); //동적 경로
         Path filePath = generateDynamicPath(); //동적 경로
         FilesLg filesLg = FilesLg.builder().build();
@@ -43,7 +43,7 @@ public class FileUtils {
                     .fileNum(uuid.toString() + "_" + file.getOriginalFilename())
                     .fileName(file.getOriginalFilename())
                     .fileSize(file.getSize())
-                    .upName(null)
+                    .upName(memberId)
                     .build();
 
             // 파일을 서버에 옮기기

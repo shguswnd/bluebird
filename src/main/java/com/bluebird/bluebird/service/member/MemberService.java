@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +20,27 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
 
+    public String  selectMember(MemberDto memberDto){
+        Member member = null;
+        try {
+            String id = memberDto.getId();
+//        Optional<Member> one =
+//        return Optional.ofNullable(memberRepository.findById(id).orElse(null));
+//        return memberRepository.findById(id).orElseGet(null);
+            member = memberRepository.findById(id).orElseGet(null);
+            if(!memberDto.getPwd().equals(member.getPwd()))
+                throw new IllegalArgumentException("패스워드가 일치하지 않습니다.");
+
+        }catch (Exception e){
+
+        }
+
+        return member.getId();
+    }
+
+    public boolean checkMember(Member member){
+        return true;
+    }
 
     public Member createMember(MemberDto memberDto){
         Member member = Member.builder()

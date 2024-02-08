@@ -19,13 +19,13 @@ public class FilesService {
     private final FileRepository fileRepository;
 
 
-    public void uploadFile(MultipartFile[] files){
+    public void uploadFile(MultipartFile[] files, String memberId){
         log.info(String.valueOf(files.length));
         System.out.println(files.length);
         try {
             for (MultipartFile file : files) {
                 if (!file.isEmpty()) {
-                    FilesLg refinedFile = fileUtils.fileRefine(file);
+                    FilesLg refinedFile = fileUtils.fileRefine(file, memberId);
                     fileRepository.save(refinedFile);
                 }else{
                     log.warn("file are empty");
